@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-
+/** Represents a AddressBook.
+ * @author ayuanshi
+ */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,7 +31,11 @@ public @Data class AddressBook {
         updateInAddressBook(addressBookDTO);
     }
 
-    private void updateInAddressBook(AddressBookDTO addressBookDTO) {
+    /**
+     * Updates data of AddressBook
+     * @param addressBookDTO
+     */
+    public void updateInAddressBook(AddressBookDTO addressBookDTO) {
         this.name=addressBookDTO.name;
         this.phoneNumber=addressBookDTO.phoneNumber;
         this.address=addressBookDTO.address;

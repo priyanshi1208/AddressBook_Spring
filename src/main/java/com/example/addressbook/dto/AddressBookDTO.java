@@ -1,28 +1,31 @@
 package com.example.addressbook.dto;
 
-import lombok.*;
-import javax.validation.constraints.NotBlank;
+import lombok.Data;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public @ToString class AddressBookDTO {
-    @NotEmpty(message = "Name cannot be Empty")
-    @Pattern(regexp = "^[A-Z][a-zA-Z\\s]{2,}$",message = "Name Invalid")
+public @Data
+class AddressBookDTO {
+    @NotEmpty(message = "Name cannot be empty")
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$",message="Name is Invalid")
     public String name;
-    @NotBlank(message = "Phone number cannot be empty")
-    @Pattern(regexp = "")
+
+    @NotEmpty(message = "Phone number can not be empty")
+    @Pattern(regexp = "\\d{2}\\d{10}",message = "Phone Number is not Valid")
     public String phoneNumber;
-    @NotBlank(message = "Address cannot be blank")
+
+    @NotEmpty(message = "Address cannot be empty")
     public String address;
-    @NotBlank(message = "City cannot be blank")
+
+    @NotEmpty(message = "City field cannot be empty")
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$",message ="City name is not valid")
     public String city;
-    @NotBlank(message = "State cannot be blank")
+
+    @NotEmpty(message = "State field cannot be empty")
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$",message ="State name is not valid")
     public String state;
-    @Pattern(regexp="")
-    @NotBlank(message="Pin code cannot be blank")
+
+    @NotEmpty(message = "PinCode cannot be empty")
     public String pinCode;
 }
