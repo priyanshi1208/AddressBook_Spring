@@ -17,8 +17,8 @@ public class AddressBookService implements IAddressBookService {
 
     /**
      *Add data in AddressBook
-     * @param addressbookDTO
-     * @return
+     * @param addressbookDTO receives data from controller to be posted in AddressBook as AddressBookDTO
+     * @return Data posted into the AddressBook is returned to the controller
      */
     @Override
     public AddressBook addInAddressBook(AddressBookDTO addressbookDTO) {
@@ -29,7 +29,7 @@ public class AddressBookService implements IAddressBookService {
 
     /**
      *Gets All the Data from AddressBook
-     * @return
+     * @return All the data of AddressBook to the controller
      */
     @Override
     public List<AddressBook> getAllPerson() {
@@ -39,8 +39,8 @@ public class AddressBookService implements IAddressBookService {
 
     /**
      *Gets Data of a Particular Id of AddressBook
-     * @param id
-     * @return
+     * @param id receives id from controller whose data is to be retrieved
+     * @return Data of AddressBook of a particular Id to the controller
      */
     @Override
     public AddressBook getPersonById(int id) {
@@ -50,9 +50,9 @@ public class AddressBookService implements IAddressBookService {
 
     /**
      *Updates data of a particular Id of an AddressBook
-     * @param id
-     * @param addressBookDTO
-     * @return
+     * @param id Receives id from controller to update its data
+     * @param addressBookDTO Receives data from controller as AddressBookDTO
+     * @return updated data from AddressBook to the controller
      */
     @Override
     public AddressBook updatePersonById(int id, AddressBookDTO addressBookDTO) {
@@ -64,7 +64,7 @@ public class AddressBookService implements IAddressBookService {
 
     /**
      *Deletes data of a particular id of an AddressBook
-     * @param id
+     * @param id receives Id from controller to delete data
      */
     @Override
     public void deletePersonById(int id) {

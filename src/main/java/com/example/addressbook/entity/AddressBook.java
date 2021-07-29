@@ -33,7 +33,7 @@ public @Data class AddressBook {
 
     /**
      * Updates data of AddressBook
-     * @param addressBookDTO
+     * @param addressBookDTO receives data that is to be updated in the AddressBook
      */
     public void updateInAddressBook(AddressBookDTO addressBookDTO) {
         this.name=addressBookDTO.name;

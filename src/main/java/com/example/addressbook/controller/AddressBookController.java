@@ -20,8 +20,8 @@ public class AddressBookController {
 
     /**
      * Calls method to Post data of a particular id and gives Response
-     * @param addressbookDTO
-     * @return
+     * @param addressbookDTO receives data as AddressBookDTO
+     * @return method returns HttpStatus,Data and message to be displayed
      */
     @PostMapping("/post")
     public ResponseEntity<ResponseDTO> addInAddressBook(@Valid @RequestBody AddressBookDTO addressbookDTO){
@@ -32,7 +32,7 @@ public class AddressBookController {
 
     /**
      * Calls method to Get all data of AddressBook and gives Response
-     * @return
+     * @return HttpResponse,All data of AddressBook and message
      */
     @GetMapping("/get")
     public ResponseEntity<ResponseDTO> getAllPerson(){
@@ -43,8 +43,8 @@ public class AddressBookController {
 
     /**
      * Calls method to Get data of a particular id and gives Response
-     * @param id
-     * @return
+     * @param id receives id as parameter from url
+     * @return HttpResponse,Data of Id and message
      */
     @GetMapping("/get/{id}")
     public ResponseEntity<ResponseDTO> getPersonById(@PathVariable("id") int id){
@@ -55,9 +55,9 @@ public class AddressBookController {
 
     /**
      * Calls method to Update data of a particular id and gives Response
-     * @param addressBookDTO
-     * @param id
-     * @return
+     * @param addressBookDTO receives Updated Data in AddressBookDTO
+     * @param id receives id from url which is to be updated
+     * @return HttpStatus,Updated Data From AddressBook and message
      */
     @PutMapping("/put/{id}")
     public ResponseEntity<ResponseDTO> updatePersonById( @RequestBody AddressBookDTO addressBookDTO,@PathVariable("id") int id){
@@ -68,8 +68,8 @@ public class AddressBookController {
 
     /**
      * Calls method to delete data and give Response
-     * @param id
-     * @return
+     * @param id receives id from url to delete
+     * @return HttpSttaus,id that is being deleted and message
      */
     @DeleteMapping("/delete/{id}")
     public  ResponseEntity<ResponseDTO> deletePersonById(@PathVariable int id){
